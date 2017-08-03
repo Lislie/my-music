@@ -19,7 +19,7 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
-import { getRecommend } from 'api/recommend'
+import { getRecommend, getDiscList } from 'api/recommend'
 import { ERR_OK } from 'api/config'
 import Slider from 'base/slider/slider'
 export default {
@@ -30,14 +30,22 @@ export default {
   },
   created() {
     this._getRecommend()
+    this._getDiscList()
   },
   methods: {
-    _getRecommend() {
+    _getRecommend() { // 轮播数据 API
       console.log('332')
       getRecommend().then((res) => {
         if (res.code === ERR_OK) {
           this.recommends = res.data.slider
           console.log(this.recommends)
+        }
+      })
+    },
+    _getDiscList() { // 歌单数据 API
+      getDiscList().then((res) => {
+        if (res.code === ERR_OK) {
+          console.log(res.data)
         }
       })
     }

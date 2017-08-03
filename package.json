@@ -11,8 +11,10 @@
         "lint": "eslint --ext .js,.vue src"
     },
     "dependencies": {
+        "@types/axios": "^0.14.0",
         "@types/fastclick": "^1.0.28",
         "@types/jsonp": "^0.2.0",
+        "axios": "^0.16.2",
         "babel-runtime": "^6.25.0",
         "better-scroll": "^0.4.0",
         "fastclick": "^1.0.6",

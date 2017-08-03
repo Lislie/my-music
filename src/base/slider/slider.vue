@@ -117,6 +117,9 @@
           // BScoll自带方法，跳转到目标 index(x,y,动画时间)
         }, this.interval)
       }
+    },
+    destroyed() {
+      clearTimeout(this.timer)
     }
   }
 </script>
