@@ -2,6 +2,7 @@
   <div id="app">
     <m-header></m-header>
     <tab></tab>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -15,6 +16,6 @@
     }
   }
 </script>
-
 <style scoped lang="stylus" rel="stylesheet/stylus">
 </style>
+
