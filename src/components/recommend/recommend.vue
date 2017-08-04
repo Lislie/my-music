@@ -51,11 +51,9 @@ export default {
   },
   methods: {
     _getRecommend() { // 轮播数据 API
-      console.log('332')
       getRecommend().then((res) => {
         if (res.code === ERR_OK) {
           this.recommends = res.data.slider
-          console.log(this.recommends)
         }
       })
     },
