@@ -1,0 +1,7 @@
+createdWith: pnpm@0.68.0
+dependencies:
+  swiper@^3.4.2: 3.4.2
+packages:
+  /swiper/3.4.2: 39d6b410b1a39833e1f72d3b72999df5f5e38392
+registry: 'https://registry.npmjs.org/'
+version: 2
