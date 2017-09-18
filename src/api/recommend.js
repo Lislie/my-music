@@ -13,6 +13,16 @@ export function getRecommend() {
   return jsonp(url, data, options)
 }
 
+export function getJson() {
+  const url = 'http://news.easyto.dev/newApp/api/1.0/destinations/d3009691c645c9ae3b90e325190238e6'
+
+  const data = Object.assign({}, commonParams, {
+    id: 'd3009691c645c9ae3b90e325190238e6',
+    type: 0
+  })
+  return jsonp(url, data, options)
+}
+
 export function getDiscList() {
   const url = '/api/getDiscList'
 

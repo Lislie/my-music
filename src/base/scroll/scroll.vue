@@ -25,6 +25,10 @@
       data: {
         type: Array,
         default: null
+      },
+      listenScroll: {
+        type: Boolean,
+        default: false
       }
     },
     mounted() {
@@ -41,6 +45,12 @@
           probeType: this.probeType,
           click: this.click
         })
+        if (this.listenScroll) {
+          let me = this // 保留一个 this
+          this.scroll.on('scroll', (pos) => {
+            me.$emit('scroll', pos) // 给父组件派发一个 scroll 事件
+          })
+        }
       },
       enable() { // 启用better-scroll
         this.scroll && this.scroll.enable()
@@ -50,6 +60,12 @@
       },
       refresh() { // 强制scroll重新计算,元素发生变化时调用此方法
         this.scroll && this.scroll.refresh()
+      },
+      scrollTo() { // 滑动到某个位置
+        this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)
+      },
+      scrollToElement() { // 滑动元素
+        this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
       }
     },
     watch: {
